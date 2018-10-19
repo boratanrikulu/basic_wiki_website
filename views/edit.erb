@@ -1,0 +1,20 @@
+
+<h1>Edit Page : <%= @title %></h1>
+
+<div>
+	<!--- we use post method beacuse browsers support only post and get methods. to tell sinatra it is a put method we create a hidden input and give calls it "_method" --->
+	<form method="post" action="/<%= @title %>">
+		<input type="hidden" name="_method" value="put">
+		<fieldset>
+			<label for="title">Title:</label>
+			<input type="text" name="title" id="title" value="<%= @title %>" readonly>
+		</fieldset>
+		<fieldset>
+			<label for="content">Content:</label>
+			<textarea rows="10" columns="50" name="content" id="content"><%= @content %></textarea>
+		</fieldset>
+		<input type="submit">
+	</form>
+</div>
+
+<p><a href="/">Back to HomePage</a></p>
