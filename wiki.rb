@@ -13,11 +13,24 @@ def save_content(title, content)
 		file.print(content)
 	end
 end
-# save_content("Test", "\nHebele\n")
+# save_content("Test", "test")
 
 def delete_content(title)
 	File.delete("pages/#{title}.txt")
 end
+
+#
+# GET retrives (geri almak) the resource from the server.
+# POST adds a new resource to the server.
+# PUT modifies an existing resource. 
+# DELETE deletes a resource.
+#
+# An HTTP method just indicates (belirtmek) type of the request.
+#
+
+#
+# you need to restart the server after every changes unlike with ruby on rails changes.
+#
 
 get "/" do
 	erb :welcome # as a symbol, it will render it as welcome.erb
